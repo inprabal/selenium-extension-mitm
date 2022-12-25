@@ -22,7 +22,7 @@ public class HostnameCertificateInfoGenerator implements CertificateInfoGenerato
     /**
      * The 'O' to use for the impersonated server certificate when doing "simple" certificate impersonation.
      */
-    private static final String DEFAULT_IMPERSONATED_CERT_ORG_UNIT = "Automation Extension MITM";
+    private static final String DEFAULT_IMPERSONATED_CERT_ORG_UNIT = "Impersonated Certificate";
 
     @Override
     public CertificateInfo generate(List<String> hostnames, X509Certificate originalCertificate) {

@@ -43,7 +43,7 @@ public class Proxy implements IProxy
     @Override
     public void start()
     {
-        startProxy(BrowserUpProxy::start);
+        startProxy(BrowserUpProxy::start); 
     }
 
     public void start(int port, InetAddress address)
