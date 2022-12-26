@@ -26,8 +26,8 @@ public enum MitmManagerType {
         @Override
         public MitmManager buildMitmManager(MitmManagerOptions options, KeyStoreOptions keyStoreOptions)
         {
-            //File keyStore = ResourceUtils.loadFile(getClass(), keyStoreOptions.getPath());
-        	File keyStore = new File(Resources.getResource(keyStoreOptions.getPath()).getFile());
+            File keyStore = ResourceUtils.loadFile(getClass(), keyStoreOptions.getPath());
+        	//File keyStore = new File(Resources.getResource(keyStoreOptions.getPath()).getFile());
             KeyStoreFileCertificateSource certificateSource = new KeyStoreFileCertificateSource(
                     keyStoreOptions.getType(), keyStore, options.getAlias(), keyStoreOptions.getPassword());
 

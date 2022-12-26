@@ -1,25 +1,11 @@
-/*
- * Copyright 2019-2020 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package org.vividus.proxy;
+package com.pb.ext.proxy;
 
 import java.net.InetAddress;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+
+import org.vividus.proxy.IProxyServerFactory;
 
 import com.browserup.bup.BrowserUpProxy;
 import com.browserup.bup.BrowserUpProxyServer;
@@ -28,9 +14,9 @@ import com.browserup.bup.filters.RequestFilter;
 import com.browserup.bup.filters.RequestFilterAdapter.FilterSource;
 import com.browserup.harreader.model.Har;
 
-public class Proxy implements IProxy
-{
-    private final IProxyServerFactory proxyServerFactory;
+public class Proxy implements IProxy {
+
+	private final IProxyServerFactory proxyServerFactory;
     private final String proxyHost;
     private BrowserUpProxyServer proxyServer;
 
@@ -130,7 +116,7 @@ public class Proxy implements IProxy
                                               .setProxyType(org.openqa.selenium.Proxy.ProxyType.MANUAL);
     }
 
-    BrowserUpProxy getProxyServer()
+    public BrowserUpProxy getProxyServer()
     {
         return proxyServer;
     }
@@ -151,4 +137,7 @@ public class Proxy implements IProxy
         }
         throw new IllegalStateException("Proxy is not started");
     }
+    
+	
+
 }

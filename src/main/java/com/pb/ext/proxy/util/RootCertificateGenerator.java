@@ -14,7 +14,7 @@ import com.browserup.bup.mitm.util.MitmConstants;
 public class RootCertificateGenerator {
 
 	public static void main(String[] args) {
-		File rootCAfile = new File(getResourcePath(args[0]) +"/rootCA.p12");
+		File rootCAfile = new File(getResourcePath(args[0]) +"/rootMitmCA.p12");
 
 		CertificateInfo certificateInfo = new CertificateInfo().commonName("INPRABAL SSL Proxy Handler")
 				.countryCode("IN")
